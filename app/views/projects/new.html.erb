@@ -1,0 +1,29 @@
+<% provide(:title, 'New Project') %>
+<h1>New Project</h1>
+
+<div class="row">
+  <div>
+    <%= form_for(@project, html: {multipart: true}) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, placeholder: "What is it all about?" %>
+
+      <%= f.file_field :media, accept: 'image/jpeg,image/gif,image/png,audio/mpeg,audio/vnd.wave' %>
+
+      <%= f.submit "Create Project", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#project_media').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 50) {
+      alert('Maximum file size is 50MB. Please choose a smaller file.');
+    }
+  });
+</script>

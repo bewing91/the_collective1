@@ -1,0 +1,19 @@
+<% provide(:title, @user.username) %>
+
+<div>
+	Welcome <%= @user.username %>, hailing from <%= @user.email %>
+</div>
+
+  <div>
+  	<%= link_to 'New Project', new_project_path %>
+  </div>
+
+  <div>
+    <% if @user.projects.any? %>
+      <h2>Projects (<%= @user.projects.count %>)</h2>
+      <ol class="projects">
+        <%= render @projects %>
+      </ol>
+      <%= will_paginate @projects %>
+    <% end %>
+  </div>

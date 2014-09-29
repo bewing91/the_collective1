@@ -9,6 +9,14 @@ gem 'jquery-rails', '3.1.1'
 gem 'turbolinks',   '2.2.2'
 gem 'jbuilder',     '2.1.3'
 gem 'sdoc',         '0.4.0', group: :doc
+gem 'devise'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
+gem 'mini_magick', '3.8.1'
+gem 'carrierwave', '0.10.0'
+gem 'fog', '1.23.0'
+gem 'carrierwave_direct', '0.0.14'
+gem 'sidekiq'
 
 group :test do
   gem 'minitest-reporters', '1.0.5'

@@ -1,7 +1,14 @@
 TheCollective1::Application.routes.draw do
+  devise_for :users
   root 'static_pages#home'
   get 'about'   => 'static_pages#about'
   get 'contact'   => 'static_pages#contact'
+  get 'users/:id' => 'users#show', as: 'user'
+  get 'users/:id' => 'users#destroy', via: :delete, :as => :user_destroy
+  get 'users/' => 'users#index'
+
+  # resources :users, :only => [:destroy]
+  resources :projects
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,19 @@
+<li>
+	<div class="row">
+		<section class="user-info">
+			<div class="col-md-1">
+				<%= link_to user.username, user_path(user.username) %>
+			</div>
+			<div class="col-md-7">
+				Created at: <%= user.created_at %>, # of Projects: <%= user.projects.count %>
+			</div>
+			<div class="col-md-3">
+				<% if current_user != user %>
+					<%= link_to "edit", '#' %>				
+					 <%= link_to "delete", user_destroy_path(user), method: :delete, 
+						data: { confirm: "Are you sure?"} %>
+				<% end %>
+			</div>
+		</section>
+	</div>
+</li>

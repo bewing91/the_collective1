@@ -1,0 +1,12 @@
+<% provide(:title, 'Admin Panel - Users') %>
+<h1>All Users</h1>
+
+<%= will_paginate %>
+
+<u1 class="users">
+	<div class="container-fluid">
+		<%= render @users %>
+	</div>
+</u1>
+
+<%= will_paginate %>
